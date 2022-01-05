@@ -17,6 +17,13 @@ public class TestMaximum<T extends Comparable> {
     }
 
     /**
+     * method to print maximum values
+     * take input from testMaximum method
+     */
+    public static <T> void printMax(T x,T y,T z,T max){
+        System.out.printf("The maximum value among %s, %s, %s is %s.\n",x,y,z,max);
+    }
+    /**
      * method to compute maximum
      * internally calls generic method testMaximum
      */
@@ -36,7 +43,7 @@ public class TestMaximum<T extends Comparable> {
         if (max.compareTo(z) < 0) {
             max = z;
         }
-        System.out.printf("The maximum value among %s, %s, %s is %s.\n", x, y, z, max);
+        printMax(x,y,z,max); // calling print function
     }
 
     //main method
@@ -46,7 +53,7 @@ public class TestMaximum<T extends Comparable> {
         Integer intX = 1, intY = 2, intZ = 3;
         Float floatX = 1.1f, floatY = 4.1f, floatZ = 3.1f;
         String stringX = "Test3", stringY = "Test2", stringZ = "Test1";
-        //find maximum value
+        //find maximum value by creating object
         new TestMaximum(intX, intY, intZ).maximum();
         new TestMaximum(floatX, floatY, floatZ).maximum();
         new TestMaximum(stringX, stringY, stringZ).maximum();
