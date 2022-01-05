@@ -6,33 +6,12 @@
 package testMaximum;
 
 public class TestMaximum {
-    //Find maximum value between 3 Integer using CompareTo
-    public static void testMaximum(Integer x, Integer y, Integer z) {
-        Integer max = x;
-        if (max.compareTo(y) < 0) {
-            max = y;
-        }
-        if (max.compareTo(z) < 0) {
-            max = z;
-        }
-        System.out.printf("The maximum value among %s, %s, %s is %s.\n", x, y, z, max);
-    }
-
-    //Find maximum value between 3 Float using CompareTo
-    public static void testMaximum(Float x, Float y, Float z) {
-        Float max = x;
-        if (max.compareTo(y) < 0) {
-            max = y;
-        }
-        if (max.compareTo(z) < 0) {
-            max = z;
-        }
-        System.out.printf("The maximum value among %s, %s, %s is %s.\n", x, y, z, max);
-    }
-
-    //Find maximum value between 3 String using CompareTo
-    public static void testMaximum(String x,String y,String z){
-        String max=x;
+    /**
+     * Generic method to compare 3 Strings/Integer/Float
+     * Extends Comparable to compare values using CompareTo method
+     */
+    public static < T extends Comparable<T>> void testMaximum(T x,T y,T z){
+        T max=x;
         if(max.compareTo(y)<0){
             max=y;
         }
